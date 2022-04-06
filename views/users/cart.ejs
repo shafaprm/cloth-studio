@@ -1,0 +1,32 @@
+<%=layout('./boilerplates/boilerplate.ejs')%>
+<div class = "main-container">
+    <p class = "bag-text"><%=user.cart.length%> Shopping Bag</p>
+    <div class = "voucher-container">
+        <img src = "/images/voucher.png" class = "voucher-image">
+        <p class = "voucher-text">Use Voucher</p>
+    </div>
+    <div class = "item-container">
+        <%for(let item of user.cart){%>
+            <div class = "wrapper">
+                <div class = "left-text-container">
+                    <h2 class = "item-name"><%=item.name.toUpperCase()%></h2>
+                    <h4 class = "item-price"><%=item.product.price%> IDR</h4>
+                </div>
+                <div class = "right-image-container">
+                    <img class = "item-image" src = "<%=item.images[0].path%>">
+                    <form action = "/user/cart/<%=item._id%>?_method=DELETE" method = "POST">
+                        <button class = "delete-button">REMOVE ITEM</button>
+                    </form>
+                </div>
+            </div>
+        <%}%>
+    </div>
+</div>
+<div class = "payment-container">
+    <a href = "/product"><button class = "back-button">BACK</button></a>
+    <div class = "total-container">
+        <p class = "total-text">Total</p>
+        <h1 class = "total-price"><%=total%>.000 IDR</h1>
+    </div>
+    <a href = "/user/checkout"><button class = "continue-button">CONTINUE</button></a>
+</div>

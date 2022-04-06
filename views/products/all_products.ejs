@@ -1,0 +1,39 @@
+<%-layout('./boilerplates/boilerplate.ejs')%>
+<%for(let product of products){%>
+  <div id="carouselExampleControls" class="carousel slide mb-3" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="<%=product.images[0].path%>" class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src = "<%=product.images[1].path%>" class="d-block w-100" alt="...">
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+  <div class = "wrapper">
+    <%for(let item of product.items){%>
+      <a href = "/product/<%=item._id%>">
+        <div class = "card-item">
+            <img class = "image-item" src = "<%=item.images[0].path%>">
+            <p class = "name-item"><%=item.name.toUpperCase()%></p>
+            <p class = "price-item">Rp<%=product.price%></p>
+            <div class = "list">
+              <p class = "size-text">S</p>
+              <p class = "size-text">M</p>
+              <p class = "size-text">L</p>
+              <p class = "size-text">XL</p>
+            </div>
+        </div>
+      </a>
+    <%}%>
+  </div>
+
+<%}%>

@@ -1,0 +1,26 @@
+<%-layout('./boilerplates/boilerplate.ejs')%>
+<div class = "main-container">
+    <%-include('../boilerplates/information_boilerplate.ejs')%>
+    <div class = "big-container">
+        <div class = "text-container">
+            <h2>Wishlist</h2>
+            <p>My Wishlist</p>
+        </div>
+        <div class = "item-container">
+            <%for(let item of user.wishlist){%>
+                <div class = "wrapper">
+                    <div class = "left-text-container">
+                        <h2 class = "item-name"><%=item.name.toUpperCase()%></h2>
+                        <h4 class = "item-price"><%=item.product.price%> IDR</h4>
+                    </div>
+                    <div class = "right-image-container">
+                        <img class = "item-image" src = "<%=item.images[0].path%>">
+                        <form action = "/user/wishlist/<%=item._id%>?_method=DELETE" method = "POST">
+                            <button class = "delete-button">REMOVE ITEM</button>
+                        </form>
+                    </div>
+                </div>
+            <%}%>
+        </div>
+    </div>
+</div>

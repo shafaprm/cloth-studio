@@ -1,0 +1,48 @@
+<nav class="navbar sticky-top navbar-expand-lg">
+    <div class="container-fluid">
+        <div class = "container d-flex">
+            <a class="navbar-brand" href="/product">C L O T H</a>
+        </div>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class = "navbar-nav ml-auto" style = "width : 60%;">
+            <%if(currentUser){%>
+                <a class = "nav-link mr-3" href = "/user"><%=currentUser.username.toUpperCase()%></a>
+            <%}else{%>
+                <a class = "nav-link mr-3" href = "/user/login">LOGIN</a>
+            <%}%>
+                <a class = "nav-link mr-3" href = "/product/about">ABOUT</a>
+                <a class = "nav-link mr-3 cart-img" href = "/user/cart"><img src = "/images/shopping_cart.svg"></a>
+        </div>
+    </div>
+</nav>
+
+ <!-- <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/product">C L O T H</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+              <%if(currentUser){%>
+                <a class="link" href="/user"><%=currentUser.username.toUpperCase()%></a>
+              <%}else{%>
+                  <a class = "link" href = "/user/login">LOGIN</a>
+              <%}%>
+          </li>
+          <li class="nav-item">
+              <a href = "/about" class = "link">ABOUT</a>
+          </li>
+          <li class = "nav-item">
+            <a class = "nav cart-img" href = "/user/cart"><img src = "/images/shopping_cart.svg"></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav> -->

@@ -1,0 +1,83 @@
+<%-layout('./boilerplates/boilerplate.ejs')%>
+
+<div class = "main-container">
+        <form action = "/user/register" method = "POST">
+            <div class = "secondary-container">
+                <div class = "left-container">
+                    <h4>Enter your personal information.</h4>
+                    <div class = "input-container">
+                        <input type = "email" id = "email" autocomplete = "off" name = "emailAddress">
+                        <label class = "label-name" for = "email">
+                            <span class = "content-name">Email</span>
+                        </label>
+                    </div>
+                    <div class = "input-container">
+                        <input type = "text" id = "name" autocomplete = "off" name = "username">
+                        <label for = "name" class = "label-name">
+                            <span class = "content-name">Name</span>
+                        </label>
+                    </div>
+                    <div class = "input-container">
+                        <input type = "password" id = "password" autocomplete = "off" name = "password">
+                        <label for = "password" class = "label-name">
+                            <span class = "content-name">Password</span>
+                        </label>
+                    </div>
+                    <div class = "input-container">
+                        <input type = "password" id = "passwordConfirmation" name = "passwordConfirmation" autocomplete = "off">
+                        <label for = "passwordConfirmation" class = "label-name">
+                            <span class = "content-name">Re-type password</span>
+                        </label>
+                    </div>
+                    <div class = "input-container">
+                        <input type = "text" id = "phoneNumber" name = "phoneNumber" autocomplete = "off">
+                        <label for = "phoneNumber" class = "label-name">
+                            <span class = "content-name">Phone number</span>
+                        </label>
+                    </div>
+                </div>
+                <div class = "right-container">
+                    <div class = "input-container">
+                        <input type = "text" id = "homeAddress" autocomplete = "off" name = "homeAddress">
+                        <label class = "label-name" for = "homeAddress">
+                            <span class = "content-name">Home address</span>
+                        </label>
+                    </div>
+                    <div class = "input-container">
+                        <input type = "text" id = "province" autocomplete = "off" name = "province">
+                        <label for = "province" class = "label-name">
+                            <span class = "content-name">Province</span>
+                        </label>
+                    </div>
+                    <div class = "input-container">
+                        <input type = "text" id = "district" autocomplete = "off" name = "district">
+                        <label for = "district" class = "label-name">
+                            <span class = "content-name">District</span>
+                        </label>
+                    </div>
+                    <div class = "input-container">
+                        <input type = "text" id = "city" autocomplete = "off" name = "city">
+                        <label for = "city" class = "label-name">
+                            <span class = "content-name">City</span>
+                        </label>
+                    </div>
+                    <div class = "input-container">
+                        <input type = "text" id = "zipCode" autocomplete = "off" name = "zipCode">
+                        <label for = "zipcode" class = "label-name">
+                            <span class = "content-name">Zip code</span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class = "button-container">
+                <button class = "reg-button">Register</button>
+            </div>
+        </form>
+   
+    <div class = "text-container">
+        <p>*Note: In order to mantain the smooth process of sending goods and information such as delivery status and receipt number
+            that will be sent via Mobile Number and <br> Email, please make sure all data you fill in this registration form is correct and as it is
+        </p>
+    </div>
+
+</div>

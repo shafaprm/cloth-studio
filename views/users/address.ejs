@@ -1,0 +1,24 @@
+<%-layout('./boilerplates/boilerplate.ejs')%>
+<div class = "main-container">
+    <%-include('../boilerplates/information_boilerplate.ejs')%>
+    <div class = "big-container">
+        <div class = "text-container">
+            <h2>Address Book</h2>
+            <p>Use the address book to store as many addresses as you want (your home, your office, your family home, etc.). This mean you don't have <br>
+                to fill in a shipping address everytime you place an order</p>
+        </div>
+        <hr>
+        <div class = "bottom-container">
+            <div class = "address-container">
+                <h5 class = "main-text"><%=user.username%></h5>
+                <p><%=user.homeAddress%></p>
+                <p><%=user.province.toUpperCase()%></p>
+                <p><%=user.district.toUpperCase()%></p>
+                <p><%=user.city.toUpperCase()%></p>
+                <p><%=user.zipCode%></p>
+                <p class = "phone-number"><%=user.phoneNumber%></p>
+            </div>
+            <a href = "/user/address/edit"><button class = "edit-button">EDIT</button></a>
+        </div>
+    </div>
+</div>

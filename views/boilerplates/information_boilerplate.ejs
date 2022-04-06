@@ -1,0 +1,18 @@
+<div class = "small-container">
+    <ul>
+        <li><a href = "/user">MY ACCOUNT</a></li>
+        <li><a href = "/user/purchase-history">PURCHASE HISTORY</a></li>
+        <li><a href = "/user/address">ADDRESS BOOK</a></li>
+        <li><a href = "/user/personal-info">PERSONAL INFO</a></li>
+        <li><a href = "/user/access-data">ACCESS DATA</a></li>
+        <li><a href = "/user/wishlist">WISHLIST</a></li>
+        <%if(user.isAdmin){%>
+            <li><a href = "/product/admin/new">NEW PRODUCT</a></li>
+        <%}%> 
+        <li>
+            <form action = "/user/logout?_method=DELETE" method = "POST">
+                <button class = "logout-button"><span>LOG OUT</span></button>
+            </form>
+        </li>
+    </ul>
+</div>

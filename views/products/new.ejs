@@ -1,0 +1,83 @@
+<%-layout('./boilerplates/boilerplate.ejs')%>
+
+<div class = "main-container">
+    <div class = "secondary-container">
+        <div class = "left-container">
+            <h4>Create Product</h4>
+            <form action = "/product/admin/new-product" method = "POST" enctype="multipart/form-data">
+                <div class = "input-container">
+                    <input type = "text" name = "name" id = "name" autocomplete = "off">
+                    <label class = "label-name">
+                        <span class = "content-name">Name</span>
+                    </label>
+                </div>
+                <div class = "input-container">
+                    <input name = "material" id = "material" type = "text" autocomplete = "off">
+                    <label for = "material" class = "label-name">
+                        <span class = "content-name">Material</span>
+                    </label>
+                </div>
+                <div class = "input-container">
+                    <input name = "feature" id = "feature" type = "text" autocomplete = "off">
+                    <label for = "feature" type = "text" class = "label-name">
+                        <span class = "content-name">Features</span>
+                    </label>
+                    <br>
+                </div>
+                <div class = "input-container">
+                    <input name = "price" type = "string" id = "price" autocomplete = "off">
+                    <label for = "price" class = "label-name" class = "content-name">
+                        <span class = "content-name">Price</span>
+                    </label>
+                </div>
+                <div class = "input-container">
+                    <input type = "file" name = "images" id = "images" multiple = "multiple">
+                    <label class = "label-image" for = "images">
+                        <span class = "content-image">Images</span>
+                    </label>
+                </div>
+                <div class = "button-container">
+                    <button class = "reg-button">Create Product</button>
+                </div>
+            </form>
+        </div>
+        <div class = "right-container">
+            <h4>Create Item</h4>
+            <form action = "/product/admin/new-item" method = "POST" enctype="multipart/form-data">
+                <div class = "input-container">
+                    <input name = "product" id = "product" type = "text" autocomplete = "off">
+                    <label for = "product" class = "label-name">
+                        <span class = "content-name">Product</span>
+                    </label>
+                </div>
+                <div class = "input-container">
+                    <input name = "name" id = "name" type = "text" autocomplete = "off">
+                    <label for = "name" class = "label-name">
+                        <span class = "content-name">Name</span>
+                    </label>
+                </div>
+                <div class = "input-container">
+                    <input name = "color" id = "color" type = "text" autocomplete = "off">
+                    <label for = "color" class = "label-name">
+                        <span class = "content-name">Color</span>
+                    </label>
+                </div>
+                <div class = "input-container">
+                    <input name = "stock" type = "number" id = "stock" autocomplete = "off">
+                    <label for = "stock" class = "label-name">
+                        <span class = "content-name">Stock</span>
+                    </label>
+                </div>
+                <div class = "input-container">
+                    <input type = "file" name = "item-images" id = "images" multiple = "multiple">
+                    <label for = "images" class = "label-image">
+                        <span class = "content-image">Images</span>
+                    </label>
+                </div>
+                <div class = "button-container">
+                    <button class = "reg-button">Create Item</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,53 @@
+<%-layout('./boilerplates/boilerplate.ejs')%>
+<div class = "main-container">
+    <%-include('../boilerplates/information_boilerplate.ejs')%>
+    <div class = "big-container">
+        <div class = "text-container">
+            <h2>Edit Address</h2>
+            <p>Keep your address and contact detail up to date.</p>
+        </div>
+        <form action = "/user/address/edit" method = "POST">
+            <div class = "left-container">
+                <div class = "input-container">
+                    <input type = "text" id = "homeAddress" autocomplete = "off" name = "homeAddress" value = "<%=user.homeAddress%>">
+                    <label class = "label-name" for = "homeAddress">
+                        <span class = "content-name">Home address</span>
+                    </label>
+                </div>
+                <div class = "input-container">
+                    <input type = "text" id = "province" autocomplete = "off" name = "province" value = "<%=user.province%>">
+                    <label for = "province" class = "label-name">
+                        <span class = "content-name">Province</span>
+                    </label>
+                </div>
+                <div class = "input-container">
+                    <input type = "text" id = "district" autocomplete = "off" name = "district" value = "<%=user.district%>">
+                    <label for = "district" class = "label-name">
+                        <span class = "content-name">District</span>
+                    </label>
+                </div>
+                <button class = "edit-button">EDIT ADDRESS</button>
+            </div>
+            <div class = "right-container">
+                <div class = "input-container">
+                    <input type = "text" id = "city" autocomplete = "off" name = "city" value = "<%=user.city%>">
+                    <label for = "city" class = "label-name">
+                        <span class = "content-name">City</span>
+                    </label>
+                </div>
+                <div class = "input-container">
+                    <input type = "text" id = "zipCode" autocomplete = "off" name = "zipCode" value = "<%=user.zipCode%>">
+                    <label for = "zipcode" class = "label-name">
+                        <span class = "content-name">Zip code</span>
+                    </label>
+                </div>
+                <div class = "input-container">
+                    <input type = "text" id = "phoneNumber" autocomplete = "off" name = "phoneNumber" value = "<%=user.phoneNumber%>">
+                    <label for = "phoneNumber" class = "label-name">
+                        <span class = "content-name">Phone Number</span>
+                    </label>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,29 @@
+<%-layout('./boilerplates/boilerplate.ejs')%>
+<div class = "main-container">
+    <%-include('../boilerplates/information_boilerplate.ejs')%>
+    <div class = "big-container">
+        <h2>My Account</h2>
+        <div class = "text-container">
+            <a href = "/user/purchase-history" class = "main-text">Purchase History</a>
+            <p>Check the status and information regarding online orders. You can also cancel your order or request a refund.</p>
+        </div>
+        <div class = "text-container">
+            <a href = "/user/address" class = "main-text">Address Book</a href = "#" class = "main-text">
+            <p>Use the address book to store as many addresses as you want (your home, your office, your family home, etc.). This mean you don't have <br>
+            to fill in a shipping address everytime you place an order</p>
+        </div>
+        <div class = "text-container">
+            <a href = "/user/personal-info" class = "main-text">Personal Info</a href = "#" class = "main-text">
+            <p>You can access and change your personal details to expedite future purchases and notify us of changes to your contact details.</p>
+        </div>
+        <div class = "text-container">
+            <a href = "/user/access-data" class = "main-text">Access Data</a>
+            <p>You can change your access details (username and password). Please note that the security of your personal is very important. You <br>
+            need to use a secure password and change it from time to time.</p>
+        </div>
+        <div class = "text-container">
+            <a href = "/user/wishlist" class = "main-text">Wishlist</a href = "#" class = "main-text">
+            <p>My Wishlist.</p>
+        </div>
+    </div>
+</div>

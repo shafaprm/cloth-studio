@@ -1,0 +1,69 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Roboto:wght@400;500&display=swap");
+* {
+  box-sizing: border-box;
+  font-family: "Montserrat";
+  padding: 0;
+  margin: 0;
+}
+.item-feature{
+    font-size : 14px;
+}
+.tolerance-text{
+    font-size : 14px
+}
+.cart-button{
+    width : 100%;
+    padding : 8px 0 8px 0;
+    background-color : #000;
+    color : #fff;
+    outline : none;
+    border : none;
+    font-weight : 500;
+    transition : all 0.2s ease;
+    margin-top : 40px
+}
+.wishlist-button{
+    width : 100%;
+    padding : 8px 0 8px 0;
+    background-color : #000;
+    color : #fff;
+    outline : none;
+    border : none;
+    font-weight : 500;
+    transition : all 0.2s ease;
+    margin-top : 15px;
+}
+.cart-button:hover, .wishlist-button:hover{
+    opacity : 0.6
+}
+.text{
+    font-size : 12px;
+    font-weight : 500
+}
+.item-container{
+    width : 100vw;
+    display : flex;
+    justify-content : center;
+    align-items : flex-start;
+    padding : 30px
+}
+.left-container{
+    width : 40%;
+    margin-right : 30px;
+}
+.right-container{
+    width : 40%;
+}
+.name-item{
+    font-size : 25px;
+    font-weight : 600
+}
+.product-name{
+    font-size : 14px;
+    font-weight : 600;
+    margin-bottom : 20px;
+}
+.price-item{
+    color : red;
+    margin-bottom : 30px
+};

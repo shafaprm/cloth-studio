@@ -1,0 +1,82 @@
+<%=layout('./boilerplates/boilerplate.ejs')%>
+<div class = "parent-container">
+    <div class = "child-container">
+        <p class = "style-text">Your order details are as follows</p>
+        <div class = "top-container">
+            <div class = "shipping-container">
+                <h4 class = "top-text">SHIPPING METHOD</h4>
+                <p class = "desc-text">Regular (1 -2 hari)</p>
+                <p class = "desc-text">REG - 20.000 IDR</p>
+            </div>
+            <div class = "address-container">
+                <h4 class = "top-text">SHIPPING ADDRESS</h4>
+                <h5 class = "main-text"><%=user.username%></h5>
+                <p><%=user.homeAddress%></p>
+                <p><%=user.province.toUpperCase()%></p>
+                <p><%=user.district.toUpperCase()%></p>
+                <p><%=user.city.toUpperCase()%></p>
+                <p><%=user.zipCode%></p>
+                <p class = "phone-number"><%=user.phoneNumber%></p>
+                <a href = "/user/address/edit"><button class = "edit-button">EDIT</button></a>
+            </div>
+        </div>
+        <div class = "bottom-container">
+            <div class = "payment-container">
+                <h4 class = "top-text">PAYMENT METHOD</h4>
+                <h5 class = "main-text">VIRTUAL-ACCOUNT (Automatic Check)</h5>
+                <div class = "bank-container">
+                    <input type = "radio">
+                    <img  class = "bank-image" src = "/images/bca.png">
+                    <p class = "desc-text">BCA Virtual Account</p>
+                </div>
+                <div class = "bank-container">
+                    <input type = "radio">
+                    <img class = "bank-image" src = "/images/mandiri.png">
+                    <p class = "desc-text">MANDIRI Virtual Account</p>
+                </div>
+                <div class = "bank-container">
+                    <input type = "radio">
+                    <img class = "bank-image" src = "/images/bni.png">
+                    <p class = "desc-text">BNI Virtual Account</p>
+                </div>
+            </div>
+            <div class = "order-container">
+                <h4 class = "top-text">ORDER DETAILS</h4>
+                <div class = "order-list">
+                    <%for(let item of user.cart){%>
+                        <div class = "item-container">
+                            <img class = "item-image" src = "<%=item.images[0].path%>">
+                            <h4 class = "item-name"><%=item.name.toUpperCase()%></h4>
+                            <h5 class = "item-price"><%=item.product.price%></h5>
+                        </div>
+                    <%}%>
+                </div>
+                <div class = "voucher-container">
+                    <img class = "voucher-image" src = "/images/voucher.png">
+                    <h4 class = "voucher-text">User Voucher</h4>
+                </div>
+                <div class = "total-container">
+                    <div class = "list-left-container">
+                        <p>Subtotal:</p>
+                        <p>Shipping Free:</p>
+                        <p>Service Fee:</p>
+                        <p>Packing Fee:</p>
+                        <p>Voucher:</p>
+                        <h4 class = "bottom-text">TOTAL:</h4>
+                    </div>
+                    <div class = "list-right-container">
+                        <p><%=total%>.000 IDR</p>
+                        <p>20.000 IDR</p>
+                        <p>0 IDR</p>
+                        <p>0 IDR</p>
+                        <p>0 IDR</p>
+                        <h4 class = "bottom-text"><%=total + 20%>.000 IDR</h4>
+                    </div>
+                </div>
+                <form action = "/user/<%=user._id%>/checkout" method = "POST">
+                    <button class = "checkout-button">CHECKOUT</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

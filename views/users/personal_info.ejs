@@ -1,0 +1,47 @@
+<%-layout('./boilerplates/boilerplate.ejs')%>
+<div class = "main-container">
+    <%-include('../boilerplates/information_boilerplate.ejs')%>
+    <div class = "big-container">
+        <div class = "text-container">
+            <h2>Personal Info</h2>
+            <p>ou can access and change your personal details to facilitate future purchases and notify us of changes to your contact details.</p>
+        </div>
+        <form action = "/user/personal-info" method = "POST">
+            <div class = "left-container">
+                <div class = "input-container">
+                    <input type = "text" id = "username" autocomplete = "off" name = "username" value = "<%=user.username%>">
+                    <label class = "label-name" for = "username">
+                        <span class = "content-name">Name</span>
+                    </label>
+                </div>
+                <div class = "input-container">
+                    <input type = "email" id = "email" autocomplete = "off" name = "emailAddress" value = "<%=user.emailAddress%>">
+                    <label for = "email" class = "label-name">
+                        <span class = "content-name">Email</span>
+                    </label>
+                </div>
+                <div class = "input-container">
+                    <input type = "text" id = "instagram" autocomplete = "off" name = "instagram" value = "<%=user.instagram%>">
+                    <label for = "instagram" class = "label-name">
+                        <span class = "content-name">Instagram</span>
+                    </label>
+                </div>
+                <button class = "edit-button">EDIT PERSONAL INFO</button>
+            </div>
+            <div class = "right-container">
+                <div class = "input-container">
+                    <input type = "text" id = "gender" autocomplete = "off" name = "gender" value = "<%=user.gender%>">
+                    <label for = "gender" class = "label-name">
+                        <span class = "content-name">Gender</span>
+                    </label>
+                </div>
+                <div class = "input-container">
+                    <input type = "text" id = "profession" autocomplete = "off" name = "profession" value = "<%=user.profession%>">
+                    <label for = "profession" class = "label-name">
+                        <span class = "content-name">Profession</span>
+                    </label>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

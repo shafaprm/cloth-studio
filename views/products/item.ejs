@@ -1,0 +1,60 @@
+<%-layout('./boilerplates/boilerplate.ejs')%>
+<div class = "item-container">
+    <div id="carouselExampleControls" class="carousel slide left-container" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="<%=item.images[0].path%>" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="<%=item.images[1].path%>" class="d-block w-100" alt="...">
+          </div>
+          <%if(item.images[2]){%>
+            <div class="carousel-item">
+              <img src="<%=item.images[2].path%>" class="d-block w-100" alt="...">
+            </div>
+          <%}%>
+
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+      <div class = "right-container">
+        <h1 class = "name-item"><%=item.name.toUpperCase()%></h1>
+        <h5 class = "product-name"><%=item.product.name.toUpperCase()%></h5>
+        <h3 class = "price-item"><%=item.product.price%> IDR</h3>
+        <p><strong>Color:</strong> <%=item.color%></p>
+        <p><strong>Material:</strong> <%=item.product.material%></p>
+        <p><strong>Features: </strong></p>
+        <%for(let i = 1; i < item.product.feature.length; i++){%>
+            <p class = "item-feature">-<%=item.product.feature[i]%></p>
+        <%}%>
+        <p><strong>Size Chart:</strong></p>
+        <p><strong>Panjang X Lebar X Dada X Pundak</strong></p>
+        <ul>
+            <li><p>S : 72 cm x 51 cm x 43 cm</p></li>
+            <li><p>M : 74 cm x 54,5 cm x 45 cm</p></li>
+            <li><p>L : 76 cm x 56 cm x 47 cm</p></li>
+            <li><p>XL : 78 cm x 58 cm x 49 cm</p></li>
+        </ul>
+        <p class = "tolerance-text">Toleransi size hingga ± 1 cm</p>
+        <p class = "text">Warna yang terlihat pada gambar mungkin tidak 100% sama dengan produk yang <br>
+        sebenarnya, disebabkan faktor cahaya pada pengambilan gambar, atau kondisi gadget <br>
+        yang digunakan untuk melihat gambar.</p>   
+        <p class = "text">Untuk pembelian online, Mohon pertimbangkan toleransi selisih perbedaan warna dan<br>
+        size, apabila setelah barang diterima perbedaan dianggap terlalu jauh, silahkan ajukan <br>
+        penukaran barang atau pengembalian dana</p> 
+        <form action = "/product/<%=item._id%>" method = "POST">
+          <button class = "cart-button">ADD TO CART</button>
+        </form>
+        <form action = "/product/<%=item._id%>/wishlist" method = "POST">
+          <button class = "wishlist-button">ADD TO WISHLIST</button>
+        </form>
+
+      </div>
+</div>
