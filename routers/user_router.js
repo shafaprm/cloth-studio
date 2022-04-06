@@ -24,6 +24,7 @@ router.post(
     failureFlash: true,
   }),
   (req, res) => {
+    console.log('logged in')
     res.redirect("/product");
   }
 );
