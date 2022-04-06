@@ -9,7 +9,7 @@ const session = require("express-session");
 const User = require("./models/user_model.js");
 const localStrategy = require("passport-local");
 const passport = require("passport");
-const MongoStore = require("connect-mongo");
+const MongoStore = require("connect-mongo")
 const flash = require("connect-flash");
 const engine = require('ejs-mate');
 const methodOverride = require('method-override');
@@ -66,7 +66,7 @@ app.use(
 app.use(passport.initialize());
 app.use(passport.session());
 
-passport.use(new localStrategy(User.authenticate()));
+passport.use(flocalStrategy(User.authenticate()));
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
