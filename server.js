@@ -103,4 +103,4 @@ app.get('*', (req, res) => {
 })
 
 
-app.listen(3000, () => console.log("Listening on port 3000", URI));
+app.listen(process.env.PORT || 5000, '0.0.0.0', () => console.log("Listening on port 3000"));
